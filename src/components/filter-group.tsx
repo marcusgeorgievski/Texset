@@ -29,6 +29,7 @@ const categories = [
   { label: "Books", icon: Book },
   { label: "Reports/Articles", icon: Newspaper },
   { label: "Resumes", icon: FileUser },
+  { label: "Cover Letters", icon: FileUser },
 ];
 
 const disciplines = [
@@ -263,17 +264,17 @@ export default function FilterGroup() {
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
+        {/* Apply button */}
+        {hasFilterChanges() && (
+          <Button
+            onClick={handleApplyFilters}
+            className="shadow-none rounded-sm cursor-pointer"
+          >
+            <Search />
+            Apply Filters
+          </Button>
+        )}
       </div>
-
-      {/* Apply button */}
-      {hasFilterChanges() && (
-        <Button
-          onClick={handleApplyFilters}
-          className="shadow-none rounded-sm cursor-pointer"
-        >
-          Apply Filters
-        </Button>
-      )}
     </div>
   );
 }

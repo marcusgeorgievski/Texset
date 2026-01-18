@@ -1,12 +1,15 @@
 import { cn } from "@/lib/utils";
-import { Eye, Heart } from "lucide-react";
+import { Download, Eye, Heart, Star } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 type TemplateThumbnailProps = {
   title: string;
   author: string;
   views: number;
   likes: number;
+  rating: number;
+  downloads: number;
   imageUrl?: string;
   className?: string;
 };
@@ -16,11 +19,13 @@ export default function TemplateCard({
   author,
   views,
   likes,
+  rating,
+  downloads,
   imageUrl,
   className,
 }: TemplateThumbnailProps) {
   return (
-    <div className={cn("cursor-pointer group", className)}>
+    <Link className={cn("cursor-pointer group", className)} href={"/test"}>
       {/* Image/Preview */}
       <div className="relative w-full aspect-[8.5/11] bg-neutral-100 border border-neutral-200 rounded-lg mb-3 group-hover:border-neutral-400 transition-colors p-4">
         {imageUrl ? (
@@ -47,17 +52,26 @@ export default function TemplateCard({
 
         {/* Right: Stats */}
         <div className="flex flex-col items-end gap-1 text-muted-foreground">
-          <div className="flex items-center gap-1">
+          {/* TODO: Move views and likes to the template's slug page */}
+          {/* <div className="flex items-center gap-1">
             <Eye className="w-3.5 h-3.5" />
             <span className="text-xs">{views}</span>
           </div>
           <div className="flex items-center gap-1">
-            {/* If user has liked: fill-red-500 text-transparent */}
+            // If user has liked: fill-red-500 text-transparent
             <Heart className="w-3.5 h-3.5" />
             <span className="text-xs">{likes}</span>
+          </div> */}
+          <div className="flex items-center gap-1">
+            <Star className="w-3.5 h-3.5" />
+            <span className="text-xs">{rating}</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <Download className="w-3.5 h-3.5" />
+            <span className="text-xs">{downloads}</span>
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

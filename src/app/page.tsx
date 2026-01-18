@@ -11,6 +11,8 @@ const templates = Array.from({ length: 5 }, (_, i) => ({
   author: "marcusgeorgievski",
   views: 1234,
   likes: 89,
+  rating: 4.2,
+  downloads: 325,
   imageUrl: "/sample.png",
 }));
 
@@ -30,7 +32,7 @@ export default function Home() {
           <Texset className="text-4xl md:text-6xl lg:text-7xl" />
         </h1>
 
-        <p className="text-center text-lg text-muted-foreground sm:text-xl max-w-2xl mx-auto lg:mx-0 mb-6">
+        <p className="mx-auto mb-6 text-center text-muted-foreground text-base sm:text-xl max-w-2xl lg:mx-0 ">
           Browse community created LaTeX templates for your next project.
         </p>
 
@@ -58,6 +60,8 @@ export default function Home() {
               author={template.author}
               views={template.views}
               likes={template.likes}
+              rating={template.rating}
+              downloads={template.downloads}
               imageUrl={template.imageUrl}
             />
           ))}
