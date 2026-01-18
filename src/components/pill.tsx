@@ -11,7 +11,7 @@ export default function Pill({ text, icon, className }: PillProps) {
   return (
     <div
       className={cn(
-        "inline-flex items-center justify-center px-4 py-1.5 rounded-full text-sm bg-neutral-100 hover:bg-neutral-200 cursor-pointer",
+        "inline-flex items-center justify-center px-4 py-1.5 rounded-full text-sm border border-neutral-200/80 bg-neutral-100 hover:bg-neutral-200/80 cursor-pointer",
         className,
       )}
     >

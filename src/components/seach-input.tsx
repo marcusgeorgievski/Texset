@@ -12,7 +12,12 @@ export default function SearchInput({
   placeholder = "Search LaTeX templates...",
 }: SearchInputProps) {
   return (
-    <InputGroup className={cn("py-5 px-1 gap-1.5 rounded-full", className)}>
+    <InputGroup
+      className={cn(
+        "py-5 px-1 gap-1.5 rounded-full backdrop-blur-2xl bg-white shado",
+        className,
+      )}
+    >
       <InputGroupInput placeholder={placeholder} />
       <InputGroupAddon>
         <Search className="text-foreground" />
