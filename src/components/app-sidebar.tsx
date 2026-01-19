@@ -19,6 +19,7 @@ export function AppSidebar() {
       </SidebarContent>
       <SidebarFooter>
         <SidebarMenu>
+          {/* TODO: Fix alignment of theme toggle */}
           <SidebarMenuItem>{/* <ThemeToggle /> */}</SidebarMenuItem>
         </SidebarMenu>
       </SidebarFooter>

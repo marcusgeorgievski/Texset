@@ -7,6 +7,8 @@ type PillProps = {
   className?: string;
 };
 
+// TODO: try some variants
+
 export default function Pill({ text, icon, className }: PillProps) {
   return (
     <div

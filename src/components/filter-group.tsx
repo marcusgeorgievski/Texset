@@ -24,6 +24,12 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
+/**
+ * TODO
+ * - break up into smaller components
+ * - more customizable
+ */
+
 const categories = [
   { label: "Notes", icon: Notebook },
   { label: "Books", icon: Book },
